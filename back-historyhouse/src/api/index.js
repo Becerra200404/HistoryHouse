@@ -4,6 +4,7 @@ import libroRoutes from "./routes/libro.routes.js"
 const PORT = 3000;
 const app = express()
 
+app.use(express.json())
 app.use(libroRoutes);
 
 app.listen(PORT);
