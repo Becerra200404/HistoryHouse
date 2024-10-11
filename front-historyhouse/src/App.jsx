@@ -1,8 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 
-import Home from './componente/Libro'
 import Libro from './componente/Libro'
 import Navbar from './inicio/Navbar'
+import Home from './inicio/Home'
+
 
 
 const App = () => {
@@ -11,11 +12,9 @@ const App = () => {
 
       <Navbar></Navbar>
       <div>
-        <Routes>
-          <Route path='./' element={<Home></Home>}></Route>
-          <Route part='./Libro' element={<Libro></Libro>}></Route>
-
-
+      <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/Libro' element={<Libro />} />
         </Routes>
       </div>
 
