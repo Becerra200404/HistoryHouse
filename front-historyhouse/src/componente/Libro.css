@@ -1,0 +1,96 @@
+.contenedor-de-libros{
+    display: grid;
+    grid-template-columns: 0.40fr 0.60fr;
+    width: 100%;             /* Se ajusta al 100% del ancho de la pantalla */
+    max-width: 1140px;       /* Limita el ancho máximo a 1140px (como Bootstrap) */
+    padding: 10%;         /* Agrega espacio a los lados para evitar que el contenido toque los bordes */
+    margin: 0 auto;          /* Centra el contenedor */
+
+
+   
+ 
+}
+
+@media (max-width: 768px) {
+    .contenedor-de-libros {
+      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+  }
+
+.contenedor-portada{
+
+    width: 40%;
+}
+.contenedor-DDR{
+
+    
+}
+
+
+/*RESUMEN */
+
+.scrollspy-example {
+    max-height: 500px; /* Ajusta la altura máxima del cuadro según tus necesidades */
+    overflow-y: scroll; /* Habilita el scroll vertical */
+    overflow-x: hidden; /* Esconde el scroll horizontal si no es necesario */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border: 1px solid #ddd; /* Borde claro */
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /*DESCRIPCION*/
+
+  .container-Descripcion{
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    border: 5px solid #E8E0C8 ;
+    margin: auto;
+    padding: 10px 0;
+    background-color: #E8E0C8;
+}
+
+.sip-obj-container{
+    width: 100%;
+    background-color: #E8E0C8;
+}
+.card-box{
+    flex: 1;  /* Hace que cada elemento ocupe el mismo espacio horizontal */
+    background-color: #D3A446;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; 
+    border-color: black;
+}
+h2{
+
+    text-decoration-color: black;
+}
+
+
+
+/*DETALLES*/
+
+
+.container-detalle{
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    border: 8px solid #E8E0C8 ;
+    margin: auto;
+    padding: 10px 0;
+    background-color: #E8E0C8;
+}
+.detalles-box{
+    flex: 1;  /* Hace que cada elemento ocupe el mismo espacio horizontal */
+    background-color: #D3A446;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; 
+}

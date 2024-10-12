@@ -1,13 +1,20 @@
-import { useState  } from "react"
+import { useState } from "react"
 import Descripcion from "./Descripcion";
 import Detalles from "./Detalles";
 import Resumen from "./Resumen";
-import {useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import './Libro.css'
+
+
+
+
+
+
 
 const Libro = () => {
-  //detalles 
-  // descripcion 
-  // resumen  
+
+  //aqui esta  el estado de  las  pantallas 
+
   const navegacion = useNavigate();
 
   const [cambio, setCambio] = useState('DETALLES')
@@ -33,14 +40,14 @@ const Libro = () => {
 
   return (
     <>
-      <div>
+      <div className="container" >
 
-        <h1>hola  soy el libro </h1>
         <div className="container" >
           <div className='row'>
             <i className="bi bi-arrow-left" id="otro" onClick={() => navegacion(-1)}></i>
           </div>
         </div>
+
         <div className='container' style={{ backgroundColor: '#E8E0C8' }} >
           <div className='row'>
             <div className='col' style={{ marginBottom: '15px' }}>
@@ -51,8 +58,22 @@ const Libro = () => {
           </div>
         </div>
 
+
       </div>
-      {botones()}
+
+
+      <div className="contenedor-de-libros" >
+        <div className="contenedor-portada">
+          <h1>hola como estas</h1>
+          
+        </div>
+
+        <div className="contenedor-DDR">
+
+          {botones()}
+        </div>
+      </div>
+
     </>
   )
 }
