@@ -5,12 +5,11 @@ import { useState, useEffect } from "react";
 import { getBooks } from "../service/api";
 
 const Home = () => {
-  
-  
+
   const [books, setBooks] = useState([]);
   const navigate = useNavigate(); 
 
-  console.log("Estos son los libros",books)
+  console.log("Estos son los libros", books)
 
   useEffect(() => {
     obtenerLibros();
@@ -27,29 +26,26 @@ const Home = () => {
     }
   };
 
-  const irADetalles = (id) => {
-    navigate(`/Libro/${id}`);
-  };
-
+  //const irADetalles = (id) => {
+    //navigate(`/Libro/${id}`);
+  //};
 
   return (
-    
-    <div>
-        <Link className='menu-link' to="/Libro"><h1>ir  a los detalles</h1></Link>
+    <div>  
+      <div className="contenedor-conciertos">
         {
           books.map((book) => (
-            <div className="card" key = {book.id_libro} style={{ backgroundImage: "url('/assets/img.jpg')" }}>
-            <img className="img" src={book.portada_libro} height={'200px'} width={'150px'}></img>
+            <div className="card" key={book.id_libro} >
+              <img className="img" src={book.portada_libro} height={'200px'} width={'150px'}></img>
               <div className="textos">
-                <button className='menu-link' onClick={() => irADetalles(book.id_libro)}>
-                  <h3>Ir a los detalles</h3>
-                </button>
-               <p>{book.titulo_libro}</p>
+                <Link className='menu-link' to="/Libro/${id}"><p>{book.titulo_libro}</p></Link>
+                // <button className='menu-link' onClick={() => irADetalles(book.id_libro)}>
+              </div>
             </div>
-          </div>
 
           ))
         }
+      </div>
 
     </div>
   )
