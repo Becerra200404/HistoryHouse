@@ -47,8 +47,8 @@ export const getCategorias = async (req, res) => {
     const { id_libro } = req.params;
 
     //corregir COnsulta!!!
-    const { rows } = await pool.query('SELECT nombre_categoria FROM libro_categoria, categoria WHERE libro_categoria.id_libro = $1', [id_libro])
-    
+    const { rows } = await pool.query(
+    'SELECT nombre_categoria FROM categoria, (SELECT id_categoria FROM libro_categoria WHERE id_libro = $1) uno WHERE uno.id_categoria = categoria.id_categoria', [id_libro])
     if (rows.length === 0){
         return res.status(404).json({message: "Categorias no encontradas" });
     }
