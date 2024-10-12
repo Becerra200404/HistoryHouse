@@ -67,6 +67,7 @@ const Libro = () => {
 
 
       <div className="contenedor-de-libros  container my-3" >
+        
         <div className="contenedor-completo my-4">
           <div className="contenedor-portada mb-2 mx-5">
             <img src="https://static0planetadelibroscommx.cdnstatics.com/usuaris/libros/fotos/292/original/portada_el-continente-olvidado_michael-reid_201902211727.jpg" />
@@ -77,7 +78,6 @@ const Libro = () => {
         </div>
 
         <div className="contenedor-DDR">
-
           {botones()}
         </div>
       </div>
