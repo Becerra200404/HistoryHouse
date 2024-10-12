@@ -3,7 +3,7 @@
 const Resumen = () => {
     return (
         <div className="contenedor">
-            <h1>Resumen</h1>
+            <h1 style={{textAlign:'center'}}>Resumen</h1>
             <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="scrollspy-example bg-body-tertiary p-3 rounded-2 texto-bonito" tabIndex="0">
                 <h4 id="scrollspyHeading1">First heading</h4>
                 <p>Capítulo 1: El narrador recuerda su niñez cuando dibujaba un elefante tragado por una serpiente boa, pero los adultos solo veían un sombrero. Esto lo desanimó a seguir dibujando.
