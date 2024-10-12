@@ -6,10 +6,10 @@ import { getBooks } from "../service/api";
 
 const Home = () => {
 
-  
+
   const [books, setBooks] = useState([]);
 
-  console.log("Estos son los libros",books)
+  console.log("Estos son los libros", books)
 
   useEffect(() => {
     obtenerLibros();
@@ -28,20 +28,20 @@ const Home = () => {
   return (
     <div>
 
-
-        <Link className='menu-link' to="/Libro"><h1>ir  a los detalles</h1></Link>
+      <div className="contenedor-conciertos">
         {
           books.map((ale) => (
-            <div className="card" key = {ale.id_libro} style={{ backgroundImage: "url('/assets/img.jpg')" }}>
-            <img className="img" src={ale.portada_libro} height={'200px'} width={'150px'}></img>
+            <div className="card" key={ale.id_libro} >
+              <img className="img" src={ale.portada_libro} height={'200px'} width={'150px'}></img>
               <div className="textos">
-                <Link className='menu-link' to="/Libro"><h3>ir  a los detalles</h3></Link>
-               <p>{ale.titulo_libro}</p>
+                <Link className='menu-link' to="/Libro"><p>{ale.titulo_libro}</p></Link>
+                
+              </div>
             </div>
-          </div>
 
           ))
         }
+      </div>
 
     </div>
   )
