@@ -117,6 +117,7 @@ const Libro = () => {
       </div>
 
       <div className="contenedor-de-libros  container my-3" >
+        
         <div className="contenedor-completo my-4">
           <div className="contenedor-portada mb-2 mx-5">
             <img src= {book.portada_libro} alt={book.titulo_libro} />

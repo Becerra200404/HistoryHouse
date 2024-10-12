@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { getBooks } from "../service/api";
 
 const Home = () => {
-
+  
   const [books, setBooks] = useState([]);
   const navigate = useNavigate(); 
 
@@ -30,19 +30,19 @@ const Home = () => {
     //navigate(`/Libro/${id}`);
   //};
 
-  return (
-    <div>  
+  return (    
+    <div>
+
       <div className="contenedor-conciertos">
         {
-          books.map((book) => (
-            <div className="card" key={book.id_libro} >
-              <img className="img" src={book.portada_libro} height={'200px'} width={'150px'}></img>
+          books.map((ale) => (
+            <div className="card" key={ale.id_libro} >
+              <img className="img" src={ale.portada_libro} height={'200px'} width={'150px'}></img>
               <div className="textos">
-                <Link className='menu-link' to="/Libro/${id}"><p>{book.titulo_libro}</p></Link>
-                // <button className='menu-link' onClick={() => irADetalles(book.id_libro)}>
+              <Link className='menu-link' to={`/Libro/${ale.id_libro}`} onClick={() => irADetalles(ale.id_libro)}>{ale.titulo_libro}</Link>
+                
               </div>
             </div>
-
           ))
         }
       </div>
