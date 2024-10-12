@@ -11,3 +11,8 @@ const api = axios.create({
 
 
 export const getBooks = () => api.get('/libros/libros')
+export const getBookByID = (id) => api.get(`/libros/libros/titulo/${id}`)
+export const getDetailsByID = (id) => api.get(`/libros/libros/detalles/${id}`)
+export const getCategorysByID = (id) => api.get(`/libros/libros/categorias/${id}`)
+export const getDescriptionsByID = (id) => api.get(`/libros/libros/descripcion/${id}`)
+export const getSummaryByID = (id) => api.get(`/libros/libros/resumen/${id}`)

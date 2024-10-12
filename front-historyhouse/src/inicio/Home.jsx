@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import './Inicio.css'
 import { useState, useEffect } from "react";
@@ -8,6 +8,7 @@ const Home = () => {
 
 
   const [books, setBooks] = useState([]);
+  const navigate = useNavigate(); 
 
   console.log("Estos son los libros", books)
 
@@ -20,12 +21,19 @@ const Home = () => {
       const response = await getBooks();
       console.log(response.data)
       setBooks(response.data);
+     
     } catch (error) {
       console.error(error);
     }
-  }
+  };
+
+  const irADetalles = (id) => {
+    navigate(`/Libro/${id}`);
+  };
+
 
   return (
+    
     <div>
 
       <div className="contenedor-conciertos">
