@@ -8,7 +8,7 @@ import Home from './inicio/Home'
 
 const App = () => {
   return (
-    < >
+    <>
 
       <Navbar></Navbar>
       <div>
