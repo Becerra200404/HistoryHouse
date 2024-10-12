@@ -1,29 +1,40 @@
+
+
+
 .contenedor-de-libros{
     display: grid;
-    grid-template-columns: 0.40fr 0.60fr;
-    width: 100%;             /* Se ajusta al 100% del ancho de la pantalla */
-    max-width: 1140px;       /* Limita el ancho máximo a 1140px (como Bootstrap) */
-    padding: 10%;         /* Agrega espacio a los lados para evitar que el contenido toque los bordes */
-    margin: 0 auto;          /* Centra el contenedor */
+    grid-template-columns: 0.35fr 0.75fr;
+    background-color: transparent;
 
-
-   
- 
 }
 
 @media (max-width: 768px) {
     .contenedor-de-libros {
-      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+      grid-template-columns: 2fr; /* Una columna en pantallas pequeñas */
     }
   }
+  .contenedor-completo{
+    display:grid;
+    border: 2px black;
+    width: 100%;
+    height: 70%;
+    justify-content: flex-start;
+  }
 
-.contenedor-portada{
+.contenedor-portada img{
+    width: 85%;
+    height: 100%;
+    object-fit: cover; 
 
-    width: 40%;
 }
 .contenedor-DDR{
 
     
+}
+
+.row{
+
+    background: transparent;
 }
 
 
