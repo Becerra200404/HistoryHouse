@@ -42,11 +42,10 @@ const Home = () => {
             <div className="card" key={ale.id_libro} >
               <img className="img" src={ale.portada_libro} height={'200px'} width={'150px'}></img>
               <div className="textos">
-                <Link className='menu-link' to="/Libro/${id}"><p>{ale.titulo_libro}</p></Link>
+              <Link className='menu-link' to={`/Libro/${ale.id_libro}`} onClick={() => irADetalles(ale.id_libro)}>{ale.titulo_libro}</Link>
                 
               </div>
             </div>
-
           ))
         }
       </div>
