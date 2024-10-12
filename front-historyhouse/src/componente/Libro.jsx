@@ -66,10 +66,14 @@ const Libro = () => {
       </div>
 
 
-      <div className="contenedor-de-libros" >
-        <div className="contenedor-portada">
-          <h1>hola como estas</h1>
-          
+      <div className="contenedor-de-libros  container my-3" >
+        <div className="contenedor-completo my-4">
+          <div className="contenedor-portada mb-2 mx-5">
+            <img src="https://static0planetadelibroscommx.cdnstatics.com/usuaris/libros/fotos/292/original/portada_el-continente-olvidado_michael-reid_201902211727.jpg" />
+          </div>
+          <div className="contenetor-titulo">
+            <h1>titulo</h1>
+          </div>
         </div>
 
         <div className="contenedor-DDR">

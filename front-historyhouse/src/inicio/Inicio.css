@@ -1,0 +1,177 @@
+.contenedor {
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+    background-color: transparent;
+    
+	
+}
+
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-conciertos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (max-width: 1024px) {
+    .contenedor-conciertos {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-conciertos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet screens */
+    }
+}
+
+@media (max-width: 350px) {
+    .contenedor-conciertos {
+        grid-template-columns: 1fr; /* 1 column on small/mobile screens */
+    }
+}
+
+
+.card {
+	border-radius: 10px;
+	min-height: 270px;
+	font-weight: bold;
+	padding: 30px;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+
+	
+}
+
+.card .textos {
+	height: 100%;
+	
+	
+}
+
+.banner {
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	background-size: cover;
+	background-position: center center;
+
+
+}
+
+.banner ul {
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+	
+}
+
+@media screen and (max-width: 700px) {
+	
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+
+
+/*NAVBAR */
+.hader{
+
+   display: grid;
+   grid-template-columns: 0.10fr 0.30fr 0.60fr;
+    background-color: rgb(175, 6, 6);
+    padding: 5px 2% ;
+   
+    gap: 20px;
+    height: 70px;
+    justify-content: space-around;
+    text-align: center;
+
+    
+}
+.logo{
+
+
+}
+
+
+.nombre-app{
+
+
+}
+.contenedor-buscaar{
+
+    justify-content: center;
+    padding: 10% 0 5%;
+
+
+}
+
+.form-search {
+    margin: 2% 0 2%;
+    justify-content: center;
+
+    
+   
+}
+
+.form-search input[type="text"] {
+    font-family: inherit;
+    padding: 9px 17px;
+    font-size: 15px;
+    font-weight: 50px;
+    width: 500px;
+    border-radius: 15px;
+    outline: none;
+    border: 0;
+}
+
+/*.form-search input[type="submit"] {
+    font-size: 20px;
+    padding: 12px 18px;
+
+    border-radius: 0px 15px 15px 0px;
+
+    background-color: #000;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+}*/
+
+
+.form-search input[type="submit"]:hover {
+    background-color: #483f3f;
+}
+
