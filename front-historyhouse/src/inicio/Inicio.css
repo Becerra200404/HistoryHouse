@@ -103,3 +103,75 @@
 @media screen and (max-width: 600px) {
 
 }
+
+
+
+/*NAVBAR */
+.hader{
+
+   display: grid;
+   grid-template-columns: 0.10fr 0.30fr 0.60fr;
+    background-color: rgb(175, 6, 6);
+    padding: 5px 2% ;
+   
+    gap: 20px;
+    height: 70px;
+    justify-content: space-around;
+    text-align: center;
+
+    
+}
+.logo{
+
+
+}
+
+
+.nombre-app{
+
+
+}
+.contenedor-buscaar{
+
+    justify-content: center;
+    padding: 10% 0 5%;
+
+
+}
+
+.form-search {
+    margin: 2% 0 2%;
+    justify-content: center;
+
+    
+   
+}
+
+.form-search input[type="text"] {
+    font-family: inherit;
+    padding: 9px 17px;
+    font-size: 15px;
+    font-weight: 50px;
+    width: 500px;
+    border-radius: 15px;
+    outline: none;
+    border: 0;
+}
+
+/*.form-search input[type="submit"] {
+    font-size: 20px;
+    padding: 12px 18px;
+
+    border-radius: 0px 15px 15px 0px;
+
+    background-color: #000;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+}*/
+
+
+.form-search input[type="submit"]:hover {
+    background-color: #483f3f;
+}
+

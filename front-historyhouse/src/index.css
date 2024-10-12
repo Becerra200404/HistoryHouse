@@ -11,6 +11,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;*/
+
+
 }
 
 a {
@@ -28,7 +30,7 @@ body {
   place-items: center;*/
   min-width: 320px;
   min-height: 100vh;
-  background-color: aqua;
+  background-color: rgb(255, 119, 0);
   
 }
 

@@ -1,20 +1,29 @@
-
+import './Inicio.css'
 
 const Navbar = () => {
     return (
-        <>
-            <nav className="navbar bg-body-tertiary">
-                <div className="container-fluid">
-                    <a className="navbar-brand">HistoryHouse</a>
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button className="btn btn-outline-success" type="submit">Search</button>
+
+        <div className="hader">
+
+            <div className="logo">
+                <h3>logo </h3>
+            </div>
+
+            <div className="nombre-app">
+                <h3>HistoyHouse</h3>
+            </div>
+
+            <div className="contenedor-buscador" >
+                <div className="form-search">
+                    <form  role="search">
+                        <input type="text" placeholder="titulo del libro"  />
+                       
                     </form>
+                    
                 </div>
-            </nav>
+            </div>
+        </div>
 
-
-        </>
     )
 }
 
