@@ -5,8 +5,7 @@ import { useState, useEffect } from "react";
 import { getBooks } from "../service/api";
 
 const Home = () => {
-
-
+  
   const [books, setBooks] = useState([]);
   const navigate = useNavigate(); 
 
@@ -27,13 +26,11 @@ const Home = () => {
     }
   };
 
-  const irADetalles = (id) => {
-    navigate(`/Libro/${id}`);
-  };
+  //const irADetalles = (id) => {
+    //navigate(`/Libro/${id}`);
+  //};
 
-
-  return (
-    
+  return (    
     <div>
 
       <div className="contenedor-conciertos">
