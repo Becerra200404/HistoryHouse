@@ -1,7 +1,7 @@
-import { pool } from '../db.js'
+import { pool } from '../config/db.js'
 
 export const getLibros = async (req, res) => {
-    const { rows } = await pool.query('SELECT titulo_libro FROM libro')
+    const { rows } = await pool.query('SELECT titulo_libro, portada_libro, id_libro FROM libro')
     //aquí sería obtener los links de las portadas osea portada_libro pero aún no hay
     res.json(rows);
 };

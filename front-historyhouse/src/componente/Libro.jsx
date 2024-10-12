@@ -1,10 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Descripcion from "./Descripcion";
 import Detalles from "./Detalles";
 import Resumen from "./Resumen";
 import { useNavigate } from 'react-router-dom'
 import './Libro.css'
-
+import { getBooks } from "../service/api";
 
 
 
@@ -17,7 +17,10 @@ const Libro = () => {
 
   const navegacion = useNavigate();
 
-  const [cambio, setCambio] = useState('DETALLES')
+
+
+  const [cambio, setCambio] = useState('DETALLES');
+
 
   const botones = () => {
     if (cambio === 'DETALLES') {
@@ -47,6 +50,7 @@ const Libro = () => {
             <i className="bi bi-arrow-left" id="otro" onClick={() => navegacion(-1)}></i>
           </div>
         </div>
+
 
         <div className='container' style={{ backgroundColor: '#E8E0C8' }} >
           <div className='row'>

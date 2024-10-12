@@ -1,14 +1,13 @@
 import axios from 'axios'
 
  const baseURL = 'http://localhost:3000'
+
 const api = axios.create({
-    url: baseURL,
-   /*  headers: {
-        'Content-Type': 'application/json',
-    }, */
+    baseURL: baseURL,
     timeout: 10000,
+    responseType: 'json',
     withCredentials: true,
-    crossdomain: true,
 });
 
-export const getAllUsers = (id) => api.get(`/api/user/${id}`)
+
+export const getBooks = () => api.get('/libros/libros')
