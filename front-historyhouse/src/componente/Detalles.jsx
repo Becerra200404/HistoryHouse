@@ -3,7 +3,7 @@
 const Detalles = ({ details , categorys}) => {
   const categorias = categorys.map(libro => libro.nombre_categoria).join(', ');
   return (
-    <div className="container-detalle">
+    <div className="contenedor-detalle">
       <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12" style={{ backgroundColor: '#E8E0C8' }}>
         <h2 style={{ textAlign: 'center' }}>Detalles del libro</h2>
         <div className="container-fluid detalles-container">

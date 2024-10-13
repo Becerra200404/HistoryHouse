@@ -9,7 +9,7 @@ const Descripcion = ( {descriptions} ) => {
         <div className="card-box">
           <h4 className="mb-0">Sinopsis</h4>
           <p className="card-text mb-auto">
-            <h2>{descriptions.sinopsis_libro}</h2>
+            <h5>{descriptions.sinopsis_libro}</h5>
           </p>
         </div>
       </div>
@@ -18,7 +18,7 @@ const Descripcion = ( {descriptions} ) => {
       <div className="card-box">
         <h4 className="mb-0">Objetivos</h4>
         <p className="card-text mb-auto">
-          <h1>{descriptions.objetivos_libro}</h1>
+          <h5>{descriptions.objetivos_libro}</h5>
         </p>
       </div>
     </div>

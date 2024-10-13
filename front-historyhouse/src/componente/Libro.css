@@ -1,10 +1,108 @@
+/*NAVBAR  SECUNDARIO Y LA FLECHA DE  ATRAS*/
+/* Contenedor principal para flecha, portada y botones */
+.contenedor-flecha-navbar2 {
+    display: flex;
+    flex-direction: column; /* Colocamos los elementos en columna */
+    align-items: flex-start; /* Alineamos todo a la izquierda */
+    padding: 0 20px; /* Padding horizontal */
+    margin-bottom: 20px;
+    height: fit-content; /* Ajustamos el alto para que se alinee con la portada */
+    padding-top: 0px;
+  }
+  
+  /* Flecha a la izquierda */
+  .contenedor-flecha {
+    display: flex;
+    align-items: center; /* Alineamos verticalmente */
+    justify-content: flex-start; /* Posicionamos la flecha a la izquierda */
+    margin-bottom: 5px; /* Espacio entre flecha y botones */
+    padding-left: 10px;
+    padding-top: 2px;
+  }
+  
+  #otro {
+    font-size: 1.5rem; /* Tamaño más grande de la flecha */
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  #otro:hover {
+    transform: scale(1.2); /* Efecto de aumento */
+    color: #ff6347; /* Color más llamativo */
+  }
+  
+  /* Contenedor para los botones */
+.contenedor-botones {
+    display: flex;
+    gap: 15px; /* Espacio entre los botones */
+    justify-content: flex-start; /* Alineación a la izquierda */
+    margin-bottom: 15px; /* Espacio inferior del contenedor */
+    flex-wrap: wrap; /* Permite que los botones se acomoden en varias filas si no hay espacio */
+  }
+  
+  /* Estilo de los botones */
+  .boton-navbar {
+    background-color: #297272;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1rem;
+  }
+  
+  /* Efecto al pasar el cursor */
+  .boton-navbar:hover {
+    transform: scale(1.1); /* Aumenta un poco el tamaño */
+    background-color: #1f5b5b; /* Cambia el color para el hover */
+  }
+  
+  /* Estilo del botón activo */
+  .boton-navbar.active {
+    background-color: #1f5b5b; /* Color para indicar que está seleccionado */
+    transform: scale(1.1); /* Mantiene el efecto de agrandado para el activo */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el botón activo */
+  }
+  
+  /* Responsividad para pantallas pequeñas */
+  @media screen and (max-width: 768px) {
+    .contenedor-botones {
+      justify-content: center; /* Centra los botones en pantallas pequeñas */
+      gap: 10px; /* Ajusta el espacio entre botones */
+    }
+  
+    .boton-navbar {
+      font-size: 0.9rem; /* Reduce el tamaño de la fuente para pantallas más pequeñas */
+      padding: 8px 16px; /* Reduce el tamaño del padding */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .contenedor-botones {
+      flex-direction: column; /* Coloca los botones en una columna para móviles */
+      align-items: center; /* Centra los botones */
+      gap: 10px; /* Ajusta el espacio entre botones */
+    }
+  
+    .boton-navbar {
+      width: 100%; /* Los botones ocupan todo el ancho disponible */
+      max-width: 300px; /* Máximo ancho para evitar que sean demasiado grandes */
+      text-align: center; /* Centra el texto dentro de los botones */
+    }
+  }
+  
+  
 
 
+/*CONTEDEDOR DE LIBROS */
 
 .contenedor-de-libros{
     display: grid;
     grid-template-columns: 0.35fr 0.75fr;
     background-color: transparent;
+    column-gap: 20px;
+    padding:  0 5%;
 
 }
 
@@ -14,23 +112,52 @@
     }
   }
   .contenedor-completo{
-    display:grid;
-    border: 2px black;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  }
+  .contenedor-DDR {
     width: 100%;
-    height: 70%;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
   }
 
-.contenedor-portada img{
-    width: 85%;
-    height: 100%;
-    object-fit: cover; 
-
+.contenedor-portada {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
-.contenedor-DDR{
+.contenedor-portada img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
 
-    
-}
+  /* Estilos para el título */
+.contenedor-titulo {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .contenedor-titulo h3 {
+    font-size: 2rem;
+  }
+  
+  
+  
+  /* Media Queries para dispositivos móviles más pequeños */
+  @media (max-width: 768px) {
+    .contenedor-titulo h1 {
+      font-size: 1.5rem;
+    }
+  
+    .contenedor-portada img {
+      max-width: 250px;
+    }
+  }
 
 .row{
 
@@ -39,9 +166,13 @@
 
 
 /*RESUMEN */
+.contenedor-resumen{
+
+
+}
 
 .scrollspy-example {
-    max-height: 500px; /* Ajusta la altura máxima del cuadro según tus necesidades */
+    max-height: 400px; /* Ajusta la altura máxima del cuadro según tus necesidades */
     overflow-y: scroll; /* Habilita el scroll vertical */
     overflow-x: hidden; /* Esconde el scroll horizontal si no es necesario */
     background-color: #ffffff;
@@ -49,10 +180,11 @@
     border-radius: 15px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     border: 1px solid #ddd; /* Borde claro */
-    max-width: 600px;
+    max-width: 700px;
     width: 100%;
     margin: 0 auto;
-  }
+    
+}
 
   /*DESCRIPCION*/
 
@@ -89,14 +221,14 @@ h2{
 /*DETALLES*/
 
 
-.container-detalle{
+.contenedor-detalle{
     width: 100%;
     height: 100%;
     max-width: 1000px;
-    border: 8px solid #E8E0C8 ;
+    border: 8px solid  transparent ;
     margin: auto;
     padding: 10px 0;
-    background-color: #E8E0C8;
+    background-color: transparent;
 }
 .detalles-box{
     flex: 1;  /* Hace que cada elemento ocupe el mismo espacio horizontal */
