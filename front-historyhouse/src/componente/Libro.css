@@ -102,7 +102,10 @@
     grid-template-columns: 0.35fr 0.75fr;
     background-color: transparent;
     column-gap: 20px;
-    padding:  0 5%;
+    padding:  0 4%;
+
+
+  gap: 20px;
 
 }
 
@@ -110,14 +113,86 @@
     .contenedor-de-libros {
       grid-template-columns: 2fr; /* Una columna en pantallas pequeñas */
     }
+    
   }
   .contenedor-completo{
-    display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    
+       flex-direction: column; /* Agregado */
+       justify-content: center; /* Agregado */
+       align-items: center; /* Agregado */
   }
+
+  .contenedor-completo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .contenedor-portada {
+    width: 100%;
+    background-color: #f3f3f3;
+    max-height: 400px; /* Ajusta según sea necesario */
+    overflow: hidden; /* Oculta el contenido desbordado */
+  }
+  
+  .imagen-portada {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .contenedor-completo:hover .imagen-portada {
+    filter: brightness(1.1); /* Efecto de brillo al pasar el cursor */
+  }
+  
+  .contenedor-titulo {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease;
+  }
+  
+  .contenedor-completo:hover .contenedor-titulo {
+    background-color: #f5f5f5;
+  }
+  
+  /* Responsividad para tablets y dispositivos pequeños */
+  @media (max-width: 768px) {
+    .contenedor-completo {
+      max-width: 80%;
+    }
+  
+    .contenedor-titulo {
+      font-size: 1rem; /* Ajusta el tamaño del texto del título en dispositivos más pequeños */
+    }
+  }
+  
+  /* Responsividad para pantallas muy pequeñas (móviles) */
+  @media (max-width: 480px) {
+    .contenedor-completo {
+      max-width: 90%;
+    }
+  
+    .contenedor-titulo {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }
+
+
+
   .contenedor-DDR {
     width: 100%;
     display: flex;
@@ -125,6 +200,9 @@
     background-color: transparent;
   }
 
+
+
+  /*
 .contenedor-portada {
     display: flex;
     justify-content: center;
@@ -136,7 +214,7 @@
     height: auto;
   }
 
-  /* Estilos para el título */
+  /* Estilos para el título 
 .contenedor-titulo {
     margin-top: 20px;
     text-align: center;
@@ -148,7 +226,7 @@
   
   
   
-  /* Media Queries para dispositivos móviles más pequeños */
+  /* Media Queries para dispositivos móviles más pequeños *
   @media (max-width: 768px) {
     .contenedor-titulo h1 {
       font-size: 1.5rem;
@@ -158,6 +236,9 @@
       max-width: 250px;
     }
   }
+
+
+  */
 
 .row{
 
@@ -171,6 +252,20 @@
 
 }
 
+.contenedor-title-resumen{
+background-color: blueviolet;
+border-radius: 10px;
+
+}
+.contenedor-title-resumen h1{
+
+    color: white;
+    text-align: center;
+
+
+}
+
+
 .scrollspy-example {
     max-height: 400px; /* Ajusta la altura máxima del cuadro según tus necesidades */
     overflow-y: scroll; /* Habilita el scroll vertical */
@@ -180,7 +275,7 @@
     border-radius: 15px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     border: 1px solid #ddd; /* Borde claro */
-    max-width: 700px;
+    max-width: 800px;
     width: 100%;
     margin: 0 auto;
     
@@ -192,12 +287,22 @@
     width: 100%;
     height: 100%;
     max-width: 1000px;
-    border: 5px solid #E8E0C8 ;
+    border: 5px solid transparent ;
     margin: auto;
     padding: 10px 0;
-    background-color: #E8E0C8;
+    background-color: transparent;
 }
 
+.contenedor-title-descripcion{
+
+    background-color: blueviolet;
+    border-radius: 10px;
+}
+.contenedor-title-descripcion h1{
+
+    color: white;
+    text-align: center;
+}
 .sip-obj-container{
     width: 100%;
     background-color: #E8E0C8;
@@ -221,19 +326,50 @@ h2{
 /*DETALLES*/
 
 
-.contenedor-detalle{
-    width: 100%;
-    height: 100%;
-    max-width: 1000px;
-    border: 8px solid  transparent ;
-    margin: auto;
-    padding: 10px 0;
-    background-color: transparent;
+.contenedor-detalle {
+  max-width: 1000px; /* Tamaño máximo para pantallas grandes */
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 10px; /* Espaciado interno */
 }
-.detalles-box{
-    flex: 1;  /* Hace que cada elemento ocupe el mismo espacio horizontal */
-    background-color: #D3A446;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px; 
+
+.contenedor-title-detalles {
+  background-color: blueviolet;
+  margin-bottom: 20px; /* Espacio debajo del título */
+  border-radius: 10px;
+}
+
+.contenedor-title-detalles{
+
+    color: white;
+    text-align: center;
+}
+
+
+.contenedor-de-detalles {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en líneas si no hay suficiente espacio */
+  gap: 20px; /* Espacio entre cada detalle */
+}
+
+.detalles-box {
+    width: 100%;
+  flex: 1 1 100%; /* Cada detalle ocupará 45% del ancho y se ajustará si hay espacio disponible */
+  background-color: #5169e2; /* Fondo azul */
+  padding: 15px; /* Espaciado interno para todos los lados */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 10px; /* Bordes redondeados */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Suaviza la transición al pasar el cursor */
+  color: white; /* Color del texto */
+}
+
+.detalles-box:hover {
+  transform: translateY(-5px); /* Mueve la tarjeta ligeramente hacia arriba */
+  background-color: #3b50cc; /* Cambia a un azul más oscuro al pasar el cursor */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .detalles-box {
+    flex: 1 1 100%; /* En pantallas pequeñas, cada detalle ocupará el 100% del ancho */
+  }
 }

@@ -131,7 +131,7 @@ const Libro = () => {
             <img src={book.portada_libro} alt={book.titulo_libro} />
           </div>
           <div className="contenetor-titulo">
-            <h1>{book.titulo_libro}</h1>
+            <h4>{book.titulo_libro}</h4>
           </div>
         </div>
 

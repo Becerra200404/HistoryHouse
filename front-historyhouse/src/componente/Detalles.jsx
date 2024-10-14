@@ -1,30 +1,39 @@
 
 
-const Detalles = ({ details , categorys}) => {
+const Detalles = ({ details, categorys }) => {
   const categorias = categorys.map(libro => libro.nombre_categoria).join(', ');
   return (
     <div className="contenedor-detalle">
-      <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12" style={{ backgroundColor: '#E8E0C8' }}>
-        <h2 style={{ textAlign: 'center' }}>Detalles del libro</h2>
-        <div className="container-fluid detalles-container">
+      
+        <div className="contenedor-title-detalles">
+        <h1 >Detalles del libro</h1>
+        </div>
+
+        <div className="contenedor-de-detalles" >
+
           <div className="detalles-box">
-            <p className="card-text mb-auto">Autor: {details.nombre_autor}</p>
+            <h6>autor:  {details.nombre_autor}</h6>
           </div>
+
           <div className="detalles-box">
-            <p className="card-text mb-auto">Editorial: {details.nombre_editorial}</p>
+            <h6>Editorial: {details.nombre_editorial}</h6>
           </div>
+
           <div className="detalles-box">
-            <p className="card-text mb-auto">Número de páginas: {details.numero_paginas}</p>
+            <h6>Número de páginas: {details.numero_paginas}pg.</h6>
           </div>
+
           <div className="detalles-box">
-            <p className="card-text mb-auto">Fecha de publicación: {details.fecha_publicacion}</p>
+            <h6>Fecha de publicación: {details.fecha_publicacion}</h6>
           </div>
+
           <div className="detalles-box">
-            <p className="card-text mb-auto">Categorias: {categorias} </p>
+            <h6>Categorias: {categorias}</h6>
           </div>
+
         </div>
       </div>
-    </div>
+    
   )
 }
 
