@@ -217,6 +217,19 @@
     /* Espacio entre el logo y el nombre de la aplicación */
 }
 
+.list-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 24px;
+    color: black;
+  }
+  
+  .list-button:hover {
+    color: white;
+  }
+
 .nombre-app {
     font-size: 24px;
     /* Ajusta el tamaño del texto para mayor legibilidad */
