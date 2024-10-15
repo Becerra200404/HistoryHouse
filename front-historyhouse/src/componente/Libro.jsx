@@ -16,75 +16,64 @@ const Libro = () => {
   const { id } = useParams(); // Obtén el ID del libro de la URL
   const [book, setBook] = useState(null);
   const [details, setDetails] = useState(null);
-  const [categorys, setCategorys] = useState([]);
+  const [categorys, setcategorys] = useState([]);
   const [descriptions, setDescriptions] = useState(null);
   const [summary, setSummary] = useState(null);
-  console.log("Este es el libro", book);
-  console.log('Estos son los detalles', details);
-  console.log('Estos son las categorias', categorys);
-  console.log('Estos son las descripciones', descriptions);
-  console.log('Este es el resumen del libro', summary);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
 
   //aqui esta  el estado de  las  pantallas 
   const navegacion = useNavigate();
   const [cambio, setCambio] = useState('DETALLES');
 
   useEffect(() => {
-    const obtenerLibro = async () => {
+    const obtenerDatos = async () => {
+      setLoading(true); // Iniciar carga
       try {
-        const response = await getBookByID(id); // Obtener el libro por ID
-        setBook(response.data[0]); // Establecer el libro en el estado
-      } catch (error) {
-        console.error(error);
+          const [bookResponse, detailsResponse, categoriesResponse, descriptionsResponse, summaryResponse] = await Promise.all([
+              getBookByID(id),
+              getDetailsByID(id),
+              getCategorysByID(id),
+              getDescriptionsByID(id),
+              getSummaryByID(id),
+          ]);
+  
+          // Imprimir las respuestas para depuración
+          console.log('Book Response:', bookResponse.status);
+          console.log('Details Response:', detailsResponse.status);
+          console.log('Categories Response:', categoriesResponse.status);
+          console.log('Descriptions Response:', descriptionsResponse.status);
+          console.log('Summary Response:', summaryResponse.status);
+  
+          // Comprobar que todas las respuestas son satisfactorias
+          if (bookResponse.status !== 200 || detailsResponse.status !== 200 || categoriesResponse.status !== 200 || descriptionsResponse.status !== 200 || summaryResponse.status !== 200) {
+            throw new Error('Error en la carga de datos');
+          }
+  
+          // Establecer los datos en el estado
+          setBook(bookResponse.data[0]);
+          setDetails(detailsResponse.data[0]);
+          setcategorys(categoriesResponse.data || []);
+          setDescriptions(descriptionsResponse.data[0]);
+          setSummary(summaryResponse.data[0]);
+      } catch (err) {
+          setError(err.message);
+      } finally {
+          setLoading(false); // Finalizar carga
       }
-    };
+  };
+  
+    obtenerDatos();
+}, [id]);
 
-    const obtenerDetalles = async () => {
-      try {
-        const response = await getDetailsByID(id); // Obtener el libro por ID
-        setDetails(response.data[0]); // Establecer el libro en el estado
-      } catch (error) {
-        console.error(error);
-      }
-    };
+if (loading) return <div>Cargando...</div>;
+if (error) return <div>Error: {error}</div>;
 
-    const obtenerCategorias = async () => {
-      try {
-        const response = await getCategorysByID(id); // Obtener el libro por ID
-        setCategorys(response.data || []); // Establecer el libro en el estado
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    const obtenerDescripciones = async () => {
-      try {
-        const response = await getDescriptionsByID(id); // Obtener el libro por ID
-        setDescriptions(response.data[0]); // Establecer el libro en el estado
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    const obtenerResumen = async () => {
-      try {
-        const response = await getSummaryByID(id); // Obtener el libro por ID
-        setSummary(response.data[0]); // Establecer el libro en el estado
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    obtenerLibro();
-    obtenerDetalles();
-    obtenerCategorias();
-    obtenerDescripciones();
-    obtenerResumen();
-  }, [id]);
 
 
   const botones = () => {
-    if (cambio === 'DETALLES' && details && categorys) {
+    if (cambio === 'DETALLES') {
       return <Detalles details={details} categorys={categorys} />;
     } else if (cambio === 'DESCRIPCION') {
       return <Descripcion descriptions={descriptions} />;
@@ -92,8 +81,6 @@ const Libro = () => {
       return <Resumen summary={summary} />;
     }
   };
-
-  if (!book) return <p>Cargando...</p>; // Mensaje de carga mientras se obtienen los datos
 
   return (
 
