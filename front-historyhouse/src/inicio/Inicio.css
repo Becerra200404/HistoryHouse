@@ -60,11 +60,11 @@
 .contenedor-conciertos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:center;
     /* Centra las cards horizontalmente */
-    gap: 35px;
+    gap: 150px;
     /* Espacio entre las cards */
-    padding: 20px;
+    /*padding: 20px;*/
     background-color: transparent;
     /* Cambia el color si es necesario */
 }
@@ -194,15 +194,12 @@
 /* NAVBAR */
 .header {
     display: flex;
-    justify-content: space-between;
-    /* Espacia el contenido entre ambos extremos */
-    align-items: center;
-    /* Alinea verticalmente los elementos */
+    justify-content: space-between;/* Espacia el contenido entre ambos extremos */
+    align-items: center;/* Alinea verticalmente los elementos */
     padding: 10px;
 
-    background-color:#4b134f ;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Añade una sombra sutil */
+    background-color:#153656;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
     margin-bottom: 20px;
     /* Espacio debajo del navbar */
 }
@@ -223,11 +220,11 @@
     cursor: pointer;
     padding: 5px;
     font-size: 24px;
-    color: black;
+    color: white;
   }
   
   .list-button:hover {
-    color: white;
+    color: black;
   }
 
 .nombre-app {

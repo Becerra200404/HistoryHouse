@@ -17,7 +17,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #153656;
   text-decoration: inherit;
 }
 
@@ -59,7 +59,7 @@ button {
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: #153656;
 }
 
 button:focus,
