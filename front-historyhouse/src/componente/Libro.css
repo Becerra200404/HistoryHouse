@@ -28,7 +28,7 @@
   
   #otro:hover {
     transform: scale(1.2); /* Efecto de aumento */
-    color: #ff6347; /* Color más llamativo */
+    color: white; /* Color más llamativo */
   }
   
   /* Contenedor para los botones */
