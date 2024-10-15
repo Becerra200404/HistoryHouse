@@ -2,6 +2,16 @@
 
 const Detalles = ({ details, categorys }) => {
   const categorias = categorys.map(libro => libro.nombre_categoria).join(', ');
+
+  const fecha_publicacion = new Date(`${details.fecha_publicacion}`);
+  const anio = fecha_publicacion.getUTCFullYear();
+  const mes = String(fecha_publicacion.getUTCMonth() + 1).padStart(2, '0'); // Los meses van de 0 a 11
+  const dia = String(fecha_publicacion.getUTCDate()).padStart(2, '0');
+
+  const fecha_publicacion_formateada = `${dia}/${mes}/${anio}`;
+
+  console.log('Fecha formateada', fecha_publicacion_formateada)
+
   return (
     <div className="contenedor-detalle">
       
@@ -24,7 +34,7 @@ const Detalles = ({ details, categorys }) => {
           </div>
 
           <div className="detalles-box">
-            <h6>Fecha de publicación: {details.fecha_publicacion}</h6>
+            <h6>Fecha de publicación: {fecha_publicacion_formateada}</h6>
           </div>
 
           <div className="detalles-box">
