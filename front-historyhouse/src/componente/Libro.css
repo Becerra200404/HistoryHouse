@@ -112,6 +112,7 @@
 @media (max-width: 768px) {
     .contenedor-de-libros {
       grid-template-columns: 2fr; /* Una columna en pantallas pequeñas */
+
     }
     
   }
@@ -191,13 +192,53 @@
     }
   }
 
-
-
-  .contenedor-DDR {
+ .contenedor-DDR {
     width: 100%;
     display: flex;
     justify-content: center;
     background-color: transparent;
+  }
+
+  .libro-audio {
+    display: flex; /* Utiliza Flexbox para alinear los botones lado a lado */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Centra los botones verticalmente */
+    gap: 10px; /* Espacio entre los botones */
+  }
+  
+  .btn-leer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1px; /* Ancho fijo del botón */
+    height: 30px; /* Alto fijo del botón */
+    background-color: transparent; /* Color de fondo */
+    color: black; /* Color del texto e icono */
+    font-size: 2rem; /* Tamaño del icono */
+    border: none;
+    border-radius: 45%; /* Hacer el botón redondo */
+    cursor: pointer;
+    position: relative; 
+  }
+  
+  .btn-leer:hover::after {
+    content: attr(title); /* Muestra el texto del atributo title */
+    position: absolute;
+    background-color: #656666;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  
+
+  #otro1{
+    font-size: 2.1rem; /* Tamaño del icono */
+    color: black;
   }
 
 
@@ -207,6 +248,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+
 }
 .contenedor-portada img {
     width: 100%;

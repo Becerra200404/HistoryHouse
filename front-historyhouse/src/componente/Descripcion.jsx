@@ -1,6 +1,8 @@
 
 
 const Descripcion = ({ descriptions }) => {
+  const objetivos = descriptions.objetivos_libro.split(";");
+  console.log('Estos son los objetivos del libro', objetivos);
   return (
     <div className="container-Descripcion">
 
@@ -22,7 +24,13 @@ const Descripcion = ({ descriptions }) => {
         <div className="card-box">
           <h4 className="mb-0">Objetivos</h4>
           <p className="card-text mb-auto">
-            <h5>{descriptions.objetivos_libro}</h5>
+            <h5>
+              <ul>
+                {objetivos.map((elemento, index) => (
+                  <li key={index}>{elemento}</li>
+                ))}
+              </ul>
+            </h5>
           </p>
         </div>
     

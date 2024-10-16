@@ -30,7 +30,7 @@ const Detalles = ({ details, categorys }) => {
           </div>
 
           <div className="detalles-box">
-            <h6>Número de páginas: {details.numero_paginas}pg.</h6>
+            <h6>Número de páginas: {details.numero_paginas}</h6>
           </div>
 
           <div className="detalles-box">
