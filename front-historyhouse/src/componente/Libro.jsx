@@ -10,7 +10,6 @@ import { getBookByID, getDetailsByID, getCategorysByID, getDescriptionsByID, get
 
 
 
-
 const Libro = () => {
 
   const { id } = useParams(); // Obtén el ID del libro de la URL
@@ -115,10 +114,18 @@ if (error) return <div>Error: {error}</div>;
 
         <div className="contenedor-completo">
           <div className="contenedor-portada">
-            <img src={book.portada_libro} alt={book.titulo_libro} />
+            <img className="imagen-portada" src={book.portada_libro} alt={book.titulo_libro} />
           </div>
           <div className="contenetor-titulo">
             <h4>{book.titulo_libro}</h4>
+            <div className="libro-audio">
+              <button className="btn-leer" type="button" title="Deshabilitado">
+                  <i class="bi bi-book" id="otro1"></i>
+              </button> 
+              <button className="btn-leer" type="button" title="Deshabilitado">
+                  <i class="bi bi-headphones" id="otro1"></i>
+              </button> 
+            </div>
           </div>
         </div>
 

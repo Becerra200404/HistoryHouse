@@ -38,8 +38,10 @@ const Home = () => {
 
   return (    
     <div>
-
-      <div className="contenedor-conciertos">
+      <div className="contenedor-logo container">
+          <h1 style={{textAlign: "center"}}>LOGO</h1>
+      </div>
+      <div className="contenedor-conciertos container">
         {
           books.map((ale) => (
             <div className="card" key={ale.id_libro} >
@@ -49,10 +51,10 @@ const Home = () => {
                 
               </div>
             </div>
+            
           ))
         }
       </div>
-
     </div>
   )
 }

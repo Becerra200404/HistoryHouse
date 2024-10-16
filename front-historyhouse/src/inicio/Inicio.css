@@ -4,58 +4,13 @@
     margin: auto;
     padding: 40px 0;
     background-color: transparent;
-
-
 }
 
 
 .titulo {
-    font-size: 24px;
-    padding: 20px 0;
+	font-size: 24px;
+	padding: 20px 0;
 }
-
-/*
-.contenedor-conciertos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens 
-    gap: 40px;
-    padding: 70px;
-}
-
-
-@media (max-width: 1024px) {
-    .contenedor-conciertos {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens 
-    }
-}
-
-@media (max-width: 768px) {
-    .contenedor-conciertos {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet screens 
-    }
-}
-
-@media (max-width: 350px) {
-    .contenedor-conciertos {
-        grid-template-columns: 1fr; /* 1 column on small/mobile screens 
-    }
-}
-
-
-.card {
-	border-radius: 10px;
-	min-height: 270px;
-	font-weight: bold;
-	padding: 20px;
-	position: relative;
-	overflow: hidden;
-	background-size: cover;
-	background-position: center center;
-
-	
-}
-    */
-
 
 .contenedor-conciertos {
     display: flex;
@@ -97,20 +52,15 @@
 
 .textos {
     padding: 10px;
-    background-color: black;
-    /* Fondo negro */
-    color: white;
-    /* Texto blanco */
+    background-color: black;  /* Fondo negro */
+    color: white;    /* Texto blanco */
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
-    /* Sombra blanca */
-    border-radius: 0px;
-    /* Esquinas redondeadas para un mejor efecto */
-    transition: box-shadow 0.3s ease-in-out;
-    /* Transición suave para la sombra */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);  /* Sombra blanca */
+    border-radius: 0px; /* Esquinas redondeadas para un mejor efecto */
+    transition: box-shadow 0.3s ease-in-out;/* Transición suave para la sombra */
 }
 
 .textos:hover {
@@ -156,38 +106,44 @@
     padding: 20px;
     background-size: cover;
     background-position: center center;
-
-
 }
 
 .banner ul {
-    list-style: none;
+
+	list-style: none;
 }
 
 .banner ul li {
-    margin: 15px;
-    font-weight: bold;
+	margin: 15px;
+	font-weight: bold;
 }
 
 .banner .boton {
-    background: #FFD600;
-    display: block;
-    width: 100%;
-    font-weight: bold;
-    font-size: 14px;
-    text-align: center;
-    padding: 10px;
-    border: none;
-    border-radius: 100px;
-    font-family: 'Roboto', sans-serif;
-    cursor: pointer;
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
 }
 
-@media screen and (max-width: 900px) {}
+@media screen and (max-width: 900px) {
+	
+}
 
-@media screen and (max-width: 700px) {}
+@media screen and (max-width: 700px) {
+	
+}
 
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {
+
+
+
 
 
 
@@ -237,34 +193,45 @@
     color: white;
 }
 
-.contenedor-buscador {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    /* Alinea el campo de búsqueda a la derecha */
+.contenedor-principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 20px; /* Espacio entre los contenedores */
     align-items: center;
-    padding: 10px 0;
-}
-
-.form-search {
-    width: 100%;
-    max-width: 500px;
-    /* Limita el ancho máximo del input */
-}
-
-.form-search input {
-    width: 100%;
     padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Añade una sombra sutil */
+  }
+  
+  .contenedor-buscador, .contenedor-usuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
 }
 
+.form-control {
+  width: 100%;
+  padding: 0.5rem 2rem 0.5rem 0.5rem; /* Aumenta el padding derecho para el icono */
+  font-size: 1rem;
+}
+
+.bi-search {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Ajusta según el padding derecho */
+  transform: translateY(-50%);
+  color: black; /* Color del icono */
+  font-size: 1.1rem; /* Tamaño del icono */
+}
 /* Media Queries */
 @media (max-width: 768px) {
+    .contenedor-conciertos .card {
+        flex: 0 1 calc(100% - 30px); /* 1 card por fila en pantallas pequeñas */
+      }
     .header {
         flex-wrap: nowrap;
         /* Evita que los elementos se ajusten en la misma línea */
@@ -282,4 +249,34 @@
     .form-search input {
         width: 100%;
     }
+
+    .contenedor-principal {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+        gap: 10px;
+      }
+    
+      .form-control, .btn {
+        font-size: 0.9rem;
+      }
 }
+
+/*contenedor del boton de usuario*/
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #848181; /* Color plomo */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    padding: 10px;
+    margin: 5px; /* Espacio alrededor del botón */
+    font-size: 1rem;
+    border-radius: 10px; /* Hacerlo cuadrado */
+  }
+  
+  .user-icon {
+    color: white; /* Icono de usuario en blanco */
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+  }
+  
