@@ -103,6 +103,7 @@
     background-color: transparent;
     column-gap: 20px;
     padding:  0 4%;
+    
 
 
   gap: 20px;
@@ -129,6 +130,7 @@
        flex-direction: column; /* Agregado */
        justify-content: center; /* Agregado */
        align-items: center; /* Agregado */
+       text-align: center;
   }
 
   .contenedor-completo:hover {
@@ -320,6 +322,7 @@ border-radius: 10px;
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
+    text-align: justify;
     
 }
 

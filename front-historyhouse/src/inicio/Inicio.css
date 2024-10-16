@@ -15,13 +15,10 @@
 .contenedor-conciertos {
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
-    /* Centra las cards horizontalmente */
-    gap: 150px;
-    /* Espacio entre las cards */
-    /*padding: 20px;*/
-    background-color: transparent;
-    /* Cambia el color si es necesario */
+    justify-content:center; /* Centra las cards horizontalmente */
+    gap: 30px; /* Espacio entre las cards */
+    padding: 30px;
+    background-color: transparent;/* Cambia el color si es necesario */
 }
 
 .card {
@@ -30,9 +27,23 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     width: 200px;
+    height: 460px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 1 calc(25% - 30px)
 }
+
+@media (max-width: 1024px) {
+    .contenedor-conciertos .card {
+      flex: 0 1 calc(50% - 30px); /* 2 cards por fila en pantallas medianas */
+    }
+  }
+  
+@media (max-width: 768px) {
+    .contenedor-conciertos .card {
+      flex: 0 1 calc(100% - 30px); /* 1 card por fila en pantallas pequeñas */
+  }
+  }
 
 .card:hover {
     transform: scale(1.05);
@@ -44,8 +55,7 @@
 
 .img {
     width: 100%;
-    height: 300px;
-    /* Ajusta la altura de la imagen */
+    height: 390px;/* Ajusta la altura de la imagen */
     object-fit: cover;
     /* Ajusta la imagen para que ocupe todo el espacio sin deformarse */
 }
@@ -142,10 +152,7 @@
 
 @media screen and (max-width: 600px) {
 
-
-
-
-
+}
 
 /* NAVBAR */
 .header {
@@ -208,12 +215,15 @@
     padding: 10px 0;
     max-width: 400px; /* Limita el ancho máximo del input */
     margin-left: auto; /* Mantiene el buscador al lado del contenedor usuario */
-    order: 2; /* Asegura que se mantenga junto al usuario */
-}  
+    /*order: 2;  Asegura que se mantenga junto al usuario */
+    flex-grow: 1; /* Permite que el buscador crezca según sea necesario */
+  }
+  
 
 .form-search {
     width: 100%;
     max-width: 200px;/* Limita el ancho máximo del input */
+
 .contenedor-principal {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
@@ -287,14 +297,16 @@
 
 /*contenedor del boton de usuario*/
 
+
 .contenedor-usuario {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 5px;
-    max-width: 150px; /* Ajusta según sea necesario */
-    order: 3;  /*Cambia el orden para que el buscador esté antes del usuario */
-}
+    max-width: 150px; /* Mantiene el tamaño fijo */
+    order: 3; /* Asegura que el contenedor usuario esté después del buscador */
+    flex-shrink: 0; /* Evita que el contenedor usuario cambie de tamaño */
+  }
 
 
     .contenedor-principal {
