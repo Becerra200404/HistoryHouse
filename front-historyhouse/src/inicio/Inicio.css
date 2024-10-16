@@ -194,12 +194,15 @@
 /* NAVBAR */
 .header {
     display: flex;
-    justify-content: space-between;/* Espacia el contenido entre ambos extremos */
-    align-items: center;/* Alinea verticalmente los elementos */
+    justify-content: space-between;
+    /* Espacia el contenido entre ambos extremos */
+    align-items: center;
+    /* Alinea verticalmente los elementos */
     padding: 10px;
 
-    background-color:#153656;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
+    background-color:#001745 ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Añade una sombra sutil */
     margin-bottom: 20px;
     /* Espacio debajo del navbar */
 }
@@ -214,17 +217,24 @@
     /* Espacio entre el logo y el nombre de la aplicación */
 }
 
+.logo-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Elimina el padding por defecto del botón */
+  }
+
 .list-button {
     background: none;
     border: none;
     cursor: pointer;
     padding: 5px;
     font-size: 24px;
-    color: white;
+    color: rgb(245, 240, 240);
   }
   
   .list-button:hover {
-    color: black;
+    color: white;
   }
 
 .nombre-app {
@@ -235,18 +245,18 @@
 }
 
 .contenedor-buscador {
-    flex: 1;
     display: flex;
-    justify-content: flex-end;
-    /* Alinea el campo de búsqueda a la derecha */
+    justify-content: flex-end; /* Alinea el campo de búsqueda a la derecha */
     align-items: center;
     padding: 10px 0;
-}
+    max-width: 400px; /* Limita el ancho máximo del input */
+    margin-left: auto; /* Mantiene el buscador al lado del contenedor usuario */
+    order: 2; /* Asegura que se mantenga junto al usuario */
+}  
 
 .form-search {
     width: 100%;
-    max-width: 500px;
-    /* Limita el ancho máximo del input */
+    max-width: 200px;/* Limita el ancho máximo del input */
 }
 
 .form-search input {
@@ -260,6 +270,32 @@
     /* Añade una sombra sutil */
 }
 
+.input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.5rem 2rem 0.5rem 0.5rem; /* Aumenta el padding derecho para el icono */
+  font-size: 1rem;
+}
+
+.bi-search {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Ajusta según el padding derecho */
+  transform: translateY(-50%);
+  color: black; /* Color del icono */
+  font-size: 1.1rem; /* Tamaño del icono */
+}
 /* Media Queries */
 @media (max-width: 768px) {
     .header {
@@ -280,3 +316,48 @@
         width: 100%;
     }
 }
+
+/*contenedor del boton de usuario*/
+
+.contenedor-usuario {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px;
+    max-width: 150px; /* Ajusta según sea necesario */
+    order: 3;  /*Cambia el orden para que el buscador esté antes del usuario */
+}
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #848181; /* Color plomo */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    padding: 10px;
+    margin: 10px; /* Espacio alrededor del botón */
+    font-size: 1rem;
+    border-radius: 10px; /* Hacerlo cuadrado */
+  }
+  
+  .user-icon {
+    color: white; /* Icono de usuario en blanco */
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+  }
+  
+  @media (max-width: 768px) {
+    .contenedor-buscador, .contenedor-usuario {
+      max-width: 100%;
+      margin: 0 5px; /* Espacio alrededor del contenedor */
+    }
+  
+    .form-search {
+      max-width: 100%;
+    }
+  
+    .btn {
+      font-size: 0.9rem; /* Tamaño del texto e icono en pantallas más pequeñas */
+      padding: 8px;
+    }
+  }
