@@ -22,7 +22,7 @@ const Detalles = ({ details, categorys }) => {
         <div className="contenedor-de-detalles" >
 
           <div className="detalles-box">
-            <h6>autor:  {details.nombre_autor}</h6>
+            <h6>Autor:  {details.nombre_autor}</h6>
           </div>
 
           <div className="detalles-box">

@@ -114,7 +114,9 @@ if (error) return <div>Error: {error}</div>;
 
         <div className="contenedor-completo">
           <div className="contenedor-portada">
-            <img className="imagen-portada" src={book.portada_libro} alt={book.titulo_libro} />
+
+            <img className="imagen-portada" src={book.portada_libro} alt={book.titulo_libro}  />
+
           </div>
           <div className="contenetor-titulo">
             <h4>{book.titulo_libro}</h4>
