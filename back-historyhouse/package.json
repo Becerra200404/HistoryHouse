@@ -2,6 +2,7 @@
   "name": "back-historyhouse",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +14,10 @@
     "prisma": "^5.20.0"
   },
   "dependencies": {
+    "axios": "^1.7.7",
     "cors": "^2.8.5",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "pg": "^8.13.0",
+    "react-router-dom": "^6.27.0"
   }
 }

@@ -1,12 +1,22 @@
-const express = require('express');
-const app = express();
+import express from 'express'
+//import libroRoutes from "./routes/libro.routes.js"
+import cors from 'cors';
+import route from './src/api/endPoints.js'
 
-const PORT = process.env.PORT || 3000;
 
-app.get('/all/user', (req, res) => {
-  res.send('¡Hola, Mundo!');
-});
+const PORT = 3000;
+const app = express()
 
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+app.use(express.json())
+//app.use(libroRoutes);
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+    methods : ['GET', 'POST', 'PUT', 'DELETE']
+}));
+
+app.use('/', route);
+
+app.listen(PORT);
+console.log("Server on port", PORT);
