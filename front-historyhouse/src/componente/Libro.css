@@ -253,7 +253,7 @@
 }
 
 .contenedor-title-resumen{
-background-color: #8f857c;
+background-color: #594f46;
 border-radius: 10px;
 
 }
@@ -270,7 +270,7 @@ border-radius: 10px;
     max-height: 400px; /* Ajusta la altura máxima del cuadro según tus necesidades */
     overflow-y: scroll; /* Habilita el scroll vertical */
     overflow-x: hidden; /* Esconde el scroll horizontal si no es necesario */
-    background-color: #c1ad9a;
+    background-color: #978676;
     padding: 20px;
     border-radius: 15px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
@@ -295,7 +295,7 @@ border-radius: 10px;
 
 .contenedor-title-descripcion{
 
-    background-color:  #8f857c;
+    background-color:  #594f46;
     border-radius: 10px;
 }
 .contenedor-title-descripcion h1{
@@ -315,6 +315,7 @@ border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 20px; 
     border-color: black;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .card-box:hover {
   transform: translateY(-5px); /* Mueve la tarjeta ligeramente hacia arriba */
@@ -337,7 +338,7 @@ h2{
 }
 
 .contenedor-title-detalles {
-  background-color: #8f857c;
+  background-color: #594f46;
   margin-bottom: 20px; /* Espacio debajo del título */
   border-radius: 10px;
 }
