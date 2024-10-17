@@ -80,14 +80,28 @@
 
 
 .textos p {
-    margin: 5px 0 0 0;
-    font-size: 14px;
-    /* Ajusta el tamaño de la fuente del título si es necesario */
-    white-space: normal;
-    /* Permite que el texto ocupe varias líneas */
-    overflow: visible;
-    /* Muestra todo el contenido */
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  white-space: normal;
+  overflow: visible;
+  background: linear-gradient(90deg, #ff6b6b, #f1c40f, #2ecc71, #3498db, #9b59b6); /* Degradado de colores */
+  background-size: 200% auto; /* Tamaño del degradado */
+  color: #fff; /* Color de respaldo en caso de que el degradado no funcione */
+  background-clip: text; 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; /* Hace que solo el texto tome el color del degradado */
+  animation: colorShift 3s linear infinite; /* Animación para el efecto de desplazamiento de colores */
 }
+
+@keyframes colorShift {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 200% 50%;
+  }
+}
+
 
 
 .menu-link h3 {
@@ -156,203 +170,177 @@
 
 /* NAVBAR */
 .header {
-    display: flex;
-    justify-content: space-between;
-    /* Espacia el contenido entre ambos extremos */
-    align-items: center;
-    /* Alinea verticalmente los elementos */
-    padding: 10px;
-
-    background-color:#001745 ;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Añade una sombra sutil */
-    margin-bottom: 20px;
-    /* Espacio debajo del navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+  background-color: #001745;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .logo-nombre {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-    margin-right: 10px;
-    /* Espacio entre el logo y el nombre de la aplicación */
+  margin-right: 10px;
 }
 
 .logo-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0; /* Elimina el padding por defecto del botón */
-  }
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
 
 .list-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    font-size: 24px;
-    color: rgb(245, 240, 240);
-  }
-  
-  .list-button:hover {
-    color: white;
-  }
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 24px;
+  color: rgb(245, 240, 240);
+}
+
+.list-button:hover {
+  color: white;
+}
 
 .nombre-app {
-    font-size: 24px;
-    /* Ajusta el tamaño del texto para mayor legibilidad */
-    font-weight: bold;
-    color: white;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
 }
-
 
 .contenedor-buscador {
-    display: flex;
-    justify-content: flex-end; /* Alinea el campo de búsqueda a la derecha */
-    align-items: center;
-    padding: 10px 0;
-    max-width: 400px; /* Limita el ancho máximo del input */
-    margin-left: auto; /* Mantiene el buscador al lado del contenedor usuario */
-    /*order: 2;  Asegura que se mantenga junto al usuario */
-    flex-grow: 1; /* Permite que el buscador crezca según sea necesario */
-  }
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 0;
+  max-width: 400px;
+  margin-left: auto;
+  flex-grow: 1;
+
   
+}
 
 .form-search {
-    width: 100%;
-    max-width: 200px;/* Limita el ancho máximo del input */
-
-.contenedor-principal {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-    gap: 20px; /* Espacio entre los contenedores */
-    align-items: center;
-    padding: 10px;
-  }
-    
-.input-wrapper {
-  position: relative;
   width: 100%;
-}
-
-.form-control {
-  width: 100%;
-  padding: 0.5rem 2rem 0.5rem 0.5rem; /* Aumenta el padding derecho para el icono */
-  font-size: 1rem;
-}
-
-.input-group {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
+  max-width: 350px;
   
 
+}
+
 .input-wrapper {
   position: relative;
   width: 100%;
+ 
+
 }
 
 .form-control {
   width: 100%;
-  padding: 0.5rem 2rem 0.5rem 0.5rem; /* Aumenta el padding derecho para el icono */
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
   font-size: 1rem;
+  border-radius: 20px;
 }
-
 
 .bi-search {
   position: absolute;
   top: 50%;
-  right: 10px; /* Ajusta según el padding derecho */
+  right: 10px;
   transform: translateY(-50%);
-  color: black; /* Color del icono */
-  font-size: 1.1rem; /* Tamaño del icono */
+  color: black;
+  font-size: 1.1rem;
+  
 }
-/* Media Queries */
-@media (max-width: 768px) {
-    .contenedor-conciertos .card {
-        flex: 0 1 calc(100% - 30px); /* 1 card por fila en pantallas pequeñas */
-      }
-    .header {
-        flex-wrap: nowrap;
-        /* Evita que los elementos se ajusten en la misma línea */
-    }
-
-    .form-search {
-        width: auto;
-    }
-
-    .contenedor-buscador {
-        width: auto;
-        justify-content: flex-end;
-    }
-
-    .form-search input {
-        width: 100%;
-    }
-
-}
-
-/*contenedor del boton de usuario*/
-
 
 .contenedor-usuario {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 5px;
-    max-width: 150px; /* Mantiene el tamaño fijo */
-    order: 3; /* Asegura que el contenedor usuario esté después del buscador */
-    flex-shrink: 0; /* Evita que el contenedor usuario cambie de tamaño */
-  }
-
-
-    .contenedor-principal {
-        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
-        gap: 10px;
-      }
-    
-      .form-control, .btn {
-        font-size: 0.9rem;
-      }
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px;
+  max-width: 150px;
+  order: 3;
+  flex-shrink: 0;
 }
 
-/*contenedor del boton de usuario*/
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #848181;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .header {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .logo-nombre {
+      margin-bottom: 10px;
+  }
+
+  .form-search {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .contenedor-buscador {
+      width: 100%;
+      justify-content: center;
+      padding: 0 10px;
+      
+  }
+
+  .contenedor-usuario {
+      max-width: 100%;
+      justify-content: center;
+      margin-top: 10px;
+  }
 
   .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #848181; /* Color plomo */
-    border: none; /* Sin borde */
-    color: white; /* Color del texto */
-    padding: 10px;
-    margin: 10px; /* Espacio alrededor del botón */
-
-    font-size: 1rem;
-    border-radius: 10px; /* Hacerlo cuadrado */
-  }
-  
-  .user-icon {
-    color: white; /* Icono de usuario en blanco */
-    margin-right: 5px; /* Espacio entre el icono y el texto */
-  }
-
-  @media (max-width: 768px) {
-    .contenedor-buscador, .contenedor-usuario {
-      max-width: 100%;
-      margin: 0 5px; /* Espacio alrededor del contenedor */
-    }
-  
-    .form-search {
-      max-width: 100%;
-    }
-  
-    .btn {
-      font-size: 0.9rem; /* Tamaño del texto e icono en pantallas más pequeñas */
+      font-size: 0.9rem;
       padding: 8px;
-    }
+      width: 100%;
   }
+}
+
+@media (max-width: 480px) {
+  .nombre-app {
+      font-size: 20px;
+  }
+
+  .list-button {
+      font-size: 20px;
+  }
+
+  .form-control {
+      padding: 0.4rem;
+      font-size: 0.9rem;
+  }
+
+  .bi-search {
+      font-size: 1rem;
+      right: 5px;
+  }
+
+  .btn {
+      font-size: 0.8rem;
+      padding: 6px;
+  }
+}
+
 
