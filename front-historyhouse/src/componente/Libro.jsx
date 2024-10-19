@@ -81,15 +81,24 @@ if (error) return <div>Error: {error}</div>;
     }
   };
 
+
+  
+
   return (
 
     <>
       <div className="contenedor-flecha-navbar2" >
+
+
+
         <div className="contenedor-flecha" >
           <div className='row'>
             <i className="bi bi-arrow-left" id="otro" onClick={() => navegacion(-1)}></i>
           </div>
         </div>
+
+
+
 
         <div className='container' id='navbar12'>
           <div className='contenedor-botones'>
@@ -110,6 +119,10 @@ if (error) return <div>Error: {error}</div>;
         </div>
       </div>
 
+
+
+
+
       <div className="contenedor-de-libros " >
 
         <div className="contenedor-completo">
@@ -122,10 +135,10 @@ if (error) return <div>Error: {error}</div>;
             <h4>{book.titulo_libro}</h4>
             <div className="libro-audio">
               <button className="btn-leer" type="button" title="Deshabilitado">
-                  <i class="bi bi-book" id="otro1"></i>
+                  <i className="bi bi-book" id="otro1"></i>
               </button> 
               <button className="btn-leer" type="button" title="Deshabilitado">
-                  <i class="bi bi-headphones" id="otro1"></i>
+                  <i className="bi bi-headphones" id="otro1"></i>
               </button> 
             </div>
           </div>

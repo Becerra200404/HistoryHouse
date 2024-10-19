@@ -166,6 +166,7 @@
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     transition: background-color 0.5s ease;
   }
+
   
   .contenedor-completo:hover .contenedor-titulo {
     background-color: #f5f5f5;
@@ -207,6 +208,15 @@
     align-items: center; /* Centra los botones verticalmente */
     gap: 10px; /* Espacio entre los botones */
   }
+
+  .libro-audio {
+    transition: opacity 0.3s ease; /* Transición suave para el cambio de opacidad */
+  }
+  
+  .libro-audio:hover {
+    opacity: 0.2; /* Ajusta el valor de opacidad entre 0 (transparente) y 1 (opaco) */
+  }
+  
   
   .btn-leer {
     display: flex;
