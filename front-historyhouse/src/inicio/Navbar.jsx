@@ -4,6 +4,9 @@ import './Inicio.css';
 const Navbar = () => {
   const navigate = useNavigate();
 
+
+  
+
   return (
     <div className="header" style={{backgroundColor: '#001745'}}>
       <div className='tres-lineas'>
@@ -15,6 +18,7 @@ const Navbar = () => {
         <button className="logo-button" onClick={() => navigate('/')}>
           <div className="logo">
             <h3>logo</h3>
+            
           </div>
         </button>
         <div className="nombre-app">
