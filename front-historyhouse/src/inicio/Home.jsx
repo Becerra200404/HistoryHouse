@@ -57,7 +57,8 @@ const Home = () => {
                 alt={ale.titulo_libro}
               />
               <div className="textos">
-                <p>{ale.titulo_libro}</p>
+                <h3>{ale.titulo_libro}</h3>
+                
               </div>
             </Link>
           ))

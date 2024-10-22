@@ -9,11 +9,13 @@ const Navbar = () => {
 
   return (
     <div className="header" style={{backgroundColor: '#001745'}}>
+
       <div className='tres-lineas'>
         <button className="list-button">
           <i className="bi bi-list"></i>
         </button>
       </div>
+
       <div className="logo-nombre">
         <button className="logo-button" onClick={() => navigate('/')}>
           <div className="logo">
@@ -29,7 +31,7 @@ const Navbar = () => {
         <div className="form-search">
           <form role="search">
             <div className="input-wrapper">
-              <input type="text" className="form-control" placeholder="Titulo del libro" />
+              <input type="text" className="form-control" placeholder="Desabilitado" />
               <i className="bi bi-search"></i>
             </div>
           </form>
