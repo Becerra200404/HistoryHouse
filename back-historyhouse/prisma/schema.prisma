@@ -4,6 +4,7 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+//npx prisma migrate dev --name <<nombre>>
 generator client {
   provider = "prisma-client-js"
 }
@@ -13,17 +14,50 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  name  String
-  email String  @unique
-  posts Post[]
+model Libro{
+  id  Int @id @default(autoincrement())
+  titulo String
+  decripcion String
+  fecha_publicacion DateTime
+  numero_paginas Int
+  sinopsis String
+  objetivos String
+  resumen String
+
+  paisId Int
+  pais Pais @relation(fields: [paisId], references: [id])
+
+  autorId Int
+  autor Autor @relation(fields: [autorId], references: [id])
+
+  editorialId Int
+  editorial Editorial @relation(fields: [editorialId], references: [id])
+
+  categorias Categoria[]
 }
 
-model Post {
-  id      Int     @id @default(autoincrement())
-  title   String
-  content String?
-  author  User    @relation(fields: [authorId], references: [id])
-  authorId Int
+model Autor{
+  id Int @id @default(autoincrement())
+  nombre String 
+  libros Libro[]
+}
+
+model Editorial{
+  id Int @id @default(autoincrement())
+  nombre String 
+  libros Libro[]
+}
+
+model Categoria{
+  id Int @id @default(autoincrement())
+  nombre String
+
+  libros Libro[]
+}
+
+model Pais{
+  id Int @id @default(autoincrement())
+  nombre String
+
+  libros Libro[]
 }
